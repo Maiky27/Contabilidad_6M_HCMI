@@ -1,0 +1,77 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Transacciones Contables</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Transacciones
+            Copias y Soluciones
+        </h1>
+
+        <div class="transaction-form">
+            <h2>Registrar Movimiento</h2>
+            <form id="registro-form">
+                <div class="form-group">
+                    <label for="cuenta">Cuenta:</label>
+                    <select id="cuenta" name="cuenta" required>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="cargo">Cargo:</label>
+                    <input type="number" id="cargo" name="cargo" step="0.01" value="">
+                </div>
+                <div class="form-group">
+                    <label for="abono">Abono:</label>
+                    <input type="number" id="abono" name="abono" step="0.01" value="">
+                </div>
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+
+        <div class="balance-container">
+            <div class="balance-column activo-column">
+                <h3>Activo</h3>
+                <div id="activo-container" class="cuentas-list"></div>
+                <div class="total-row">
+                    <p>Total Activo:</p>
+                    <p id="total-activo" class="total-amount"></p>
+                </div>
+            </div>
+            <div class="balance-column pasivo-capital-column">
+                <h3>Pasivo y Capital</h3>
+                <div id="pasivo-capital-container" class="cuentas-list"></div>
+                <div class="total-row">
+                    <p>Total Pasivo + Capital:</p>
+                    <p id="total-pasivo-capital" class="total-amount"></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="balance-status">
+            <h4 id="balance-check"></h4>
+        </div>
+        
+        <div class="history-section">
+            <h2>Historial de Transacciones</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Cuenta</th>
+                        <th>Cargo</th>
+                        <th>Abono</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
